@@ -2,13 +2,15 @@
 
 ansible localhost -m debug -a 'var=groups.keys()' | grep -i fal
 ansible all -m ping
-ansible 10.1.1.1 -m raw-a 'ifconfig|eth0'
+ansible 10.1.1.1 -m raw -a 'ifconfig|eth0'
 
 ansible-doc -l
 ansible-doc -s  module_name
 
 ansible all -m shell -a echo "123456789" |passwd –stdin user1'
 ansible all -m user -a "name=test password=<abc>"
+ansible all -m user -b -a "name=test password=<abc>"  #sudo to root
+
 ansible 10.1.1.11 -m user -a 'name=test state=absent remove=yes'
 ansible all -m group -a 'gid=2014 name=nolinux'
 
