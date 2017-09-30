@@ -1,0 +1,7 @@
+ansible all -s -m shell -a 'apt-get install nginx'
+
+ansible all -s -m apt -a 'pkg=nginx state=installed update_cache=true'
+127.0.0.1 | success >> {
+    "changed": false
+}
+
