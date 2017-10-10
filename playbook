@@ -1,0 +1,24 @@
+- hosts: WL*
+
+  tasks:
+    - name: test
+      shell: hostname
+      register: host
+    - debug: var=host.stdout_lines
+
+    - copy:
+        src: /home/linux-x64.rpm
+        dest: /tmp/linux-x64.rpm
+
+    - debug:
+       msg: "System {{ inventory_hostname }} has below information"
+
+     - name: uname -a of {{ inventory_hostname }}
+       shell: "uname -a"
+       register: c1
+
+       - debug: var=c1.stdout_lines
+
+
+
+ ansible-playbook --limit '!198.168.1.100' copy_file.yml
