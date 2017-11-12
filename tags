@@ -1,1 +1,2 @@
  ansible-playbook -i ../tests/inventory --tags="uptime" main.yml 
+ansible-playbook -i tests/inventory --skip-tags="audit" tasks/main.yml 
