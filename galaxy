@@ -1,0 +1,26 @@
+ansible-galaxy init daily
+
+lyuan@vmware010 tasks]$ cat main.yml 
+---
+# tasks file for daily
+- hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles:
+  - lookdata
+  
+[lyuan@vmware010 tasks]$ cat main.yml 
+- include: test.yml
+[lyuan@vmware010 tasks]$ cat test.yml 
+- name: testgalaxy
+  shell: ls
+
+- name: uptime
+  command: uptime
+  register: u1
+  tags:
+    - uptime
+- name: luptime
+  debug: msg="{{u1.stdout}}"
+[lyuan@vmware010 tasks]$ 
