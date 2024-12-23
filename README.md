@@ -1,11 +1,10 @@
 share for everyone
 
 CentOS-7-x86_64-NetInstall-1611.iso
-http://mirrors.163.com/centos/7/os/x86_64/
+[http://mirrors.163.com/centos/7/os/x86_64/](https://mirrors.aliyun.com/centos/7.9.2009/os/x86_64/)
+https://mirrors.aliyun.com/centos/7.9.2009/isos/x86_64
 
-$ wget http://mirrors.163.com/.help/CentOS7-Base-163.repo 
 
-$ mv CentOS7-Base-163.repo CentOS7-Base.repo 
 
 $ yum clean all 
 
